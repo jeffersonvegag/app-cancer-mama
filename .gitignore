@@ -1,0 +1,88 @@
+# Scripts de respaldo
+*.backup
+
+# Dependencias Node.js
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+# Dependencias Python
+backend/__pycache__/
+backend/*.pyc
+backend/venv/
+backend/.env
+ml-model/__pycache__/
+ml-model/*.pyc
+ml-model/venv/
+
+# Base de datos
+backend/patients.db
+backend/*.db
+
+# Modelos entrenados
+ml-model/*.h5
+ml-model/*.pkl
+ml-model/models/
+ml-model/checkpoints/
+
+# Datasets
+ml-model/data/
+ml-model/dataset/
+
+# Logs
+*.log
+logs/
+
+# Docker
+.dockerignore
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos temporales
+tmp/
+temp/
+*.tmp
+
+# Imágenes de prueba
+uploads/
+images/
+*.jpg
+*.png
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+
+# Reportes y gráficos
+reports/
+plots/
+*.pdf
+
+# Variables de entorno
+.env
+.env.local
+.env.production
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Tensorflow
+*.pb
+saved_model/
+
+# Pytest
+.pytest_cache/
+.coverage
+
+# MyPy
+.mypy_cache/

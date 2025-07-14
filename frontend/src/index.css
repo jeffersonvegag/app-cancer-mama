@@ -1,0 +1,269 @@
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.content {
+  padding: 30px;
+}
+
+.search-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 2px solid #e1e1e1;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.search-section h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #667eea;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #5a6fd8;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.patient-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.mammography-section {
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.mammography-placeholder {
+  text-align: center;
+  color: #666;
+}
+
+.mammography-image {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 6px;
+}
+
+.patient-details {
+  padding: 20px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.patient-details h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #555;
+}
+
+.detail-value {
+  color: #333;
+}
+
+.details-textarea {
+  width: 100%;
+  min-height: 80px;
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.upload-section {
+  margin: 30px 0;
+  padding: 20px;
+  border: 2px solid #e1e1e1;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.upload-section h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.file-input {
+  margin-bottom: 15px;
+}
+
+.file-input input {
+  width: 100%;
+  padding: 12px;
+  border: 2px dashed #ddd;
+  border-radius: 6px;
+  background-color: white;
+}
+
+.results-section {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.results-success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.results-warning {
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  color: #856404;
+}
+
+.results-danger {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+.prediction-score {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.confidence-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.confidence-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #28a745, #ffc107, #dc3545);
+  transition: width 0.3s ease;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 15px 0;
+}
+
+.image-preview {
+  position: relative;
+  display: inline-block;
+}
+
+.bbox-overlay {
+  position: absolute;
+  border: 3px solid #ff0000;
+  background-color: rgba(255, 0, 0, 0.1);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .patient-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .search-form {
+    flex-direction: column;
+  }
+  
+  body {
+    padding: 10px;
+  }
+}

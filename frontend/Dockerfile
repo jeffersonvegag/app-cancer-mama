@@ -20,4 +20,4 @@ RUN npm install -g serve
 EXPOSE 3000
 
 # Serve the application with SPA fallback
-CMD ["serve", "-s", "build", "-l", "3000", "--single"]
+CMD ["serve", "-s", "dist", "-l", "3000", "--single"]

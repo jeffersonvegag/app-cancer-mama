@@ -91,7 +91,7 @@ app = FastAPI(title="Sistema de Diagnóstico de Cáncer de Mama", version="3.0.0
 # Configurar CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173"],
+    allow_origins=["https://app-cancer-mama-front.onrender.com"],  # URL de tu frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

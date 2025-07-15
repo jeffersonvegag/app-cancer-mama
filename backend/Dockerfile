@@ -1,5 +1,4 @@
 FROM python:3.11-slim
-
 WORKDIR /app
 
 # Instalar dependencias del sistema
@@ -16,8 +15,8 @@ RUN apt-get update && apt-get install -y \
     g++ \
     && rm -rf /var/lib/apt/lists/*
 
-# Copiar requirements
-COPY requirements.txt .
+# Copiar requirements desde backend
+COPY backend/requirements.txt .
 
 # Instalar dependencias Python
 RUN pip install --no-cache-dir --upgrade pip && \
@@ -27,10 +26,10 @@ RUN pip install --no-cache-dir --upgrade pip && \
 RUN mkdir -p /app/data /app/ml-model
 
 # Copiar código del backend
-COPY . .
+COPY backend/ .
 
-# Copiar código del modelo ML desde el directorio padre
-COPY ../ml-model ./ml-model
+# Copiar código del modelo ML
+COPY ml-model/ ./ml-model
 
 # Variables de entorno
 ENV PYTHONPATH=/app:/app/ml-model

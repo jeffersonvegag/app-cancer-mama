@@ -1,24 +1,23 @@
 FROM node:18-alpine
-
 WORKDIR /app
 
-# Copiar package.json
+# Copy package.json
 COPY package.json ./
 
-# Instalar dependencias (usa npm install en lugar de npm ci)
+# Install dependencies
 RUN npm install
 
-# Copiar código fuente
+# Copy source code
 COPY . .
 
-# Build de producción
+# Build for production
 RUN npm run build
 
-# Instalar serve para servir la aplicación
+# Install serve globally
 RUN npm install -g serve
 
-# Exponer puerto
+# Expose port
 EXPOSE 3000
 
-# Servir la aplicación
-CMD ["serve", "-s", "build", "-l", "3000"]
+# Serve the application with SPA fallback
+CMD ["serve", "-s", "build", "-l", "3000", "--single"]

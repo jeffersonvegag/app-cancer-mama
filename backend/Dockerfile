@@ -26,8 +26,11 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # Crear directorios necesarios
 RUN mkdir -p /app/data /app/ml-model
 
-# Copiar código de la aplicación
+# Copiar código del backend
 COPY . .
+
+# Copiar código del modelo ML desde el directorio padre
+COPY ../ml-model ./ml-model
 
 # Variables de entorno
 ENV PYTHONPATH=/app:/app/ml-model
@@ -37,5 +40,5 @@ ENV DATABASE_PATH=/app/data/patients.db
 # Exponer puerto
 EXPOSE 8000
 
-# Para producción, quitar --reload
+# Comando para producción
 CMD ["sh", "-c", "python auto_train.py && uvicorn main:app --host 0.0.0.0 --port 8000"]

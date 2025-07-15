@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     g++ \
     && rm -rf /var/lib/apt/lists/*
 
-# Copiar requirements primero para aprovechar cache de Docker
+# Copiar requirements
 COPY requirements.txt .
 
 # Instalar dependencias Python
@@ -37,5 +37,5 @@ ENV DATABASE_PATH=/app/data/patients.db
 # Exponer puerto
 EXPOSE 8000
 
-# Script de inicio que entrena el modelo si es necesario y luego inicia la app
-CMD ["sh", "-c", "python auto_train.py && uvicorn main:app --host 0.0.0.0 --port 8000 --reload"]
+# Para producción, quitar --reload
+CMD ["sh", "-c", "python auto_train.py && uvicorn main:app --host 0.0.0.0 --port 8000"]
